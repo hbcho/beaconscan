@@ -2,7 +2,7 @@ var fs = require('fs');
 var io =require("socket.io-client");
 const {spawn}  = require('child_process');
 const execSync =require('child_process').execSync;
-const socketClient = io("http://192.168.0.170:3000");
+const socketClient = io("http://your ip:3000");
 
 //execSync('sudo hcitool lescan & sudo hcidump --raw > rawdata.txt');
 
