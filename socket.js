@@ -4,7 +4,7 @@ var io = require("socket.io");
 var fs = require('fs');
 var kalmanFilter = require('kalmanjs');
 var app = express();
-//트래킹할 주소
+//address to track
 //var addressToTrack = ['ac233f528171','ac233f528170'];
 /*
 var kalmanFilter = new KalmanFilter ({R: 0.01, Q: 3});
@@ -54,7 +54,7 @@ socketServer.on("connection", socket=> {
             "txpower": dataa.txpower,
             "major": dataa.major,
             "minor": dataa.minor,
-	        "battery" : dataa.battery,
+	    "battery" : dataa.battery,
         });
 
         //JSON으로 저장
