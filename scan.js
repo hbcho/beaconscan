@@ -17,11 +17,9 @@ function idcheck(array, value){
 	});
 }
 
-
 socketClient.on("connect", () => {
 	console.log("connection server");
 });
-
 
 
 fs.readFile('rawdata.txt', 'utf8',function(err, data){
@@ -39,7 +37,6 @@ fs.readFile('rawdata.txt', 'utf8',function(err, data){
 		//console.log(data[i].slice(22,39));
 		
 		var mac = data[i].slice(22,39);
-
 		
 		if(idcheck(macset,mac)){
 			var battery = data[i].slice(85, 88);
@@ -53,7 +50,6 @@ fs.readFile('rawdata.txt', 'utf8',function(err, data){
 					//too simple to deal with all casess
 					macchk = mac;
 					batterychk = battery;
-
 				} 
 				else if(data[i].length==143){
 					
@@ -85,7 +81,3 @@ fs.readFile('rawdata.txt', 'utf8',function(err, data){
 		}
 	}	
 });
-
-
-//39byte -> battery info 39*3=117
-//battery != '' && 
