@@ -4,15 +4,11 @@ var io = require("socket.io");
 var fs = require('fs');
 var kalmanFilter = require('kalmanjs');
 var app = express();
-//address to track
-//var addressToTrack = ['ac233f528171','ac233f528170'];
-/*
 var kalmanFilter = new KalmanFilter ({R: 0.01, Q: 3});
-
 var dataConstantKalman = noisyDataConstan.map(function(v){
     return kalmanFilter.filter(v);
 });
-*/
+
 
 //JSON file 저장용
 var obj = {
@@ -25,7 +21,6 @@ function idchek(array, value){
        return value == arrayValue
        });
 }
-
 
 //http 서버에 연결 및 확인
 var httpServer = http.createServer(app).listen(3000, () =>{
@@ -43,10 +38,8 @@ socketServer.on("connection", socket=> {
         console.log('txPower: ' + dataa.txpower);
         console.log('major: ' + dataa.major);
         console.log('minor: ' + dataa.minor);
-	    console.log('battery: ' + dataa.battery +'% \n');
+	console.log('battery: ' + dataa.battery +'% \n');
         console.log(JSON.stringify(dataa, null, ' '));
-
-
 
         obj.table.push({
             "uuid": dataa.mac,
@@ -64,15 +57,3 @@ socketServer.on("connection", socket=> {
         });
     });
 });
-
-
-
-
-
-//html로 web에 표현
-/*
-app.get('/', function(req,res){
-i
-    res.sendFile(__dirname + '/index.html');
-});
-*/
