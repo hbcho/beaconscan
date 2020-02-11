@@ -24,12 +24,7 @@ socketClient.on("connect", () => {
 
 fs.readFile('rawdata.txt', 'utf8',function(err, data){
 	if(err) throw err;
-
 	data = data.split(">").slice(4)
-	//data = data.replace(/\n/gi,"");
-	//console.log(data[1][7]);
-	//console.log(mac);
-	
 	//Hexadecimal
 	parseInt(data, 16); 
 	
